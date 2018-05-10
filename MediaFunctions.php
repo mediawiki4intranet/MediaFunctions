@@ -46,7 +46,7 @@ $wgAutoloadClasses['MediaFunctions'] = __DIR__ . '/MediaFunctions.class.php';
 $wgHooks['ParserFirstCallInit'][] = 'efMediaFunctionsSetup';
 
 // Register function callbacks and add error messages to the message cache
-function efMediaFunctionsSetup( &$parser ) {
+function efMediaFunctionsSetup( $parser ) {
 	$parser->setFunctionHook( 'mediamime', array( 'MediaFunctions', 'mediamime' ) );
 	$parser->setFunctionHook( 'mediasize', array( 'MediaFunctions', 'mediasize' ) );
 	$parser->setFunctionHook( 'mediaheight', array( 'MediaFunctions', 'mediaheight' ) );
